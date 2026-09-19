@@ -1,0 +1,18 @@
+INSERT INTO Manufacturer (Name) values ('Rheem');
+INSERT INTO Manufacturer (Name) values ('Dimplex');
+INSERT INTO Manufacturer (Name) values ('Carrier');
+INSERT INTO Manufacturer (Name) values ('Mitsubishi Electric');
+INSERT INTO Manufacturer (Name) values ('Bradford White');
+INSERT INTO Manufacturer (Name) values ('Lasko');
+INSERT INTO Manufacturer (Name) values ('Trane');
+INSERT INTO Manufacturer (Name) values ('Fujitsu');
+INSERT INTO Manufacturer (Name) values ('AO Smith');
+INSERT INTO Manufacturer (Name) values ('DeLonghi');
+INSERT INTO Manufacturer (Name) values ('Lennox');
+INSERT INTO Manufacturer (Name) values ('LG');
+INSERT INTO Manufacturer (Name) values ('Whirlpool');
+INSERT INTO Manufacturer (Name) values ('Dr. Infrared');
+INSERT INTO Manufacturer (Name) values ('Goodman');
+INSERT INTO Manufacturer (Name) values ('Daikin');
+INSERT INTO Manufacturer (Name) values ('Rinnai');
+INSERT INTO Manufacturer (Name) values ('Honeywell');

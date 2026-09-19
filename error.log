@@ -1,0 +1,14 @@
+[18-Apr-2023 19:20:32 America/Los_Angeles] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'gatechUser'@'localhost' (using password: YES) in E:\XAMPP\htdocs\Phase_3\lib\common.php:58
+Stack trace:
+#0 E:\XAMPP\htdocs\Phase_3\lib\common.php(58): mysqli_connect('localhost', 'gatechUser', Object(SensitiveParameterValue), 'cs6400_sp23_tea...', '3306')
+#1 E:\XAMPP\htdocs\Phase_3\top25_man.php(38): include('E:\\XAMPP\\htdocs...')
+#2 {main}
+  thrown in E:\XAMPP\htdocs\Phase_3\lib\common.php on line 58
+[18-Apr-2023 19:20:34 America/Los_Angeles] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'gatechUser'@'localhost' (using password: YES) in E:\XAMPP\htdocs\Phase_3\lib\common.php:58
+Stack trace:
+#0 E:\XAMPP\htdocs\Phase_3\lib\common.php(58): mysqli_connect('localhost', 'gatechUser', Object(SensitiveParameterValue), 'cs6400_sp23_tea...', '3306')
+#1 E:\XAMPP\htdocs\Phase_3\View_Search_Manufacturer_Model.php(47): include('E:\\XAMPP\\htdocs...')
+#2 {main}
+  thrown in E:\XAMPP\htdocs\Phase_3\lib\common.php on line 58
+[18-Apr-2023 19:28:55 America/Los_Angeles] PHP Deprecated:  str_ireplace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in E:\XAMPP\htdocs\Phase_3\View_Search_Manufacturer_Model.php on line 74
+[18-Apr-2023 19:28:55 America/Los_Angeles] PHP Deprecated:  str_ireplace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in E:\XAMPP\htdocs\Phase_3\View_Search_Manufacturer_Model.php on line 74
