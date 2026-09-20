@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+error.log
+
+# Local environment files
+.env
+
+# Editor files
+.vscode/
+
+# PHP cache
+*.cache
