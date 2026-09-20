@@ -7,6 +7,6 @@ session_start();
     <link rel="stylesheet" type="text/css" href="style/style.css" />
 
 </head>
-<div>
-        <img src="images/Alternakraft.png" title="logo" alt="site logo" />
-    </div>
+<div class="logo-header">
+    <img src="images/Alternakraft.png" title="logo" alt="site logo" class="site-logo" />
+</div>

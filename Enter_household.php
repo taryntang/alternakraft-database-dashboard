@@ -35,22 +35,22 @@ if (isset($_POST['nextButton'])) {
                 $errors['PostalCode']  = "Postal Code  is required";
             }
             if (empty($_POST['HeatTem'])) {
-                if ($_POST['heating'] !== 'NULL'){
-                $errors['heatCheckbox'] = 'Please select "No Heat" checkbox or put in a temperature.';
+                if (isset($_POST['heating']) && $_POST['heating'] === 'NULL') {
+                    $HeatTem = NULL;
                 } else {
-                $HeatTem = NULL;
+                    $errors['heatCheckbox'] = 'Please select "No Heat" checkbox or put in a temperature.';
                 }
-            }else{
-                $HeatTem=mysqli_real_escape_string($db, $_POST['HeatTem']);
+            } else {
+                $HeatTem = mysqli_real_escape_string($db, $_POST['HeatTem']);
             }
         
             if (empty($_POST['CoolTem'])) {
-                if ($_POST['cooling'] !== 'NULL'){
-                $errors['coolCheckbox'] = 'Please select "No Cooling" checkbox or put in a temperature.';
-                } else {
+                if (isset($_POST['cooling']) && $_POST['cooling'] === 'NULL') {
                     $CoolTem = NULL;
+                } else {
+                    $errors['coolCheckbox'] = 'Please select "No Cooling" checkbox or put in a temperature.';
                 }
-            }else{    
+            } else {    
                 $CoolTem = mysqli_real_escape_string($db, $_POST['CoolTem']);
             }
             if (isset ($_POST['Electric'])){

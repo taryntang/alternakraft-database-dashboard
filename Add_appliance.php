@@ -1,8 +1,13 @@
 <?php 
 include('lib/common.php');
-if (isset($_SESSION['Email'])) {
-    $Email = $_SESSION['Email'];
+
+if (!isset($_SESSION['Email'])) {
+    header('Location: Enter_household.php');
+    exit();
 }
+
+$Email = $_SESSION['Email'];
+$errors = [];
 if (isset($_POST['nextButton'])) {
     $ModelName=$_POST["ModelName"];
     $ApplianceType=$_POST["ApplianceType"];

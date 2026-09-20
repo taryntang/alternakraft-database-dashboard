@@ -1,5 +1,12 @@
 <?php 
 include('lib/common.php');
+
+if (!isset($_SESSION['Email'])) {
+    header('Location: Enter_household.php');
+    exit();
+}
+
+$errors = [];
 if (isset($_POST['nextButton'])) {
     $sql = "SELECT *
     FROM Appliance
@@ -7,9 +14,10 @@ if (isset($_POST['nextButton'])) {
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0){
         header('Location: powergenerator.php');
-}else{
-    $errors['EmptyAppliance']  = " Please add at least one appliance.";
-}
+        exit();
+    } else {
+        $errors['EmptyAppliance']  = " Please add at least one appliance.";
+    }
 }
 ?>
 <?php include("lib/header.php"); ?>
@@ -92,6 +100,7 @@ if (isset($_POST['nextButton'])) {
                 echo "<td>" . $row["ModelName"] . "</td>";
                 echo "<td> <a href='Delete_appliance.php?delete_ApplianceID=".
                 urlencode($row['ApplianceID']). "&Email=".urlencode($row['Email']). "'>delete</a> </td>";
+                echo "</tr>";
             }
             echo "</table>";
 
@@ -103,6 +112,8 @@ if (isset($_POST['nextButton'])) {
         <br>
         <br>
         <a href="Add_appliance.php"class='right'>+Add Another Appliance</a>
+        <br>
+        <?php if (!empty($errors['EmptyAppliance'])) { echo '<p class="error">' . $errors['EmptyAppliance'] . '</p>'; } ?>
         <br>
             <form action="View_appliance.php" method="POST">
                 <input type="submit" name="nextButton" value="Next" class="rightbutton" >

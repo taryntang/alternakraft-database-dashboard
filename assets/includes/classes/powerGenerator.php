@@ -43,20 +43,20 @@ class powerGenerator{
         $this->validateStorageKWh($storagekWh);
         $query1="SELECT MAX(PowerGeneratorId) AS max_id FROM PowerGenerator WHERE email= '$email'" ;
         $result1 = mysqli_query($this->con, $query1);
+        $deletedPowerId = $_SESSION['deleted_power_id'] ?? 0;
        
         if (mysqli_num_rows($result1) > 0) { 
           
             $row_arry = mysqli_fetch_assoc($result1);
-            if ($row_arry['max_id']>$_SESSION['deleted_power_id']){
-                $_SESSION['index'] =  $row_arry['max_id'];
+            if ($row_arry['max_id'] > $deletedPowerId){
+                $_SESSION['index'] =  (int) $row_arry['max_id'];
                 
             }else{
-                $_SESSION['index'] = $_SESSION['deleted_power_id'];
+                $_SESSION['index'] = (int) $deletedPowerId;
                 unset($_SESSION['deleted_power_id']);
             }
-        }else{
-         
-            $_SESSION['index'];
+        } else {
+            $_SESSION['index'] = $_SESSION['index'] ?? 0;
         }
         if (empty($this->errorArray)) {
             return $this->insertPowerDetails($powerType, $monthlykWh, $storagekWh, $email);
@@ -65,8 +65,8 @@ class powerGenerator{
         return false;
     }
     public function insertPowerDetails($powerType, $monthlykWh, $storagekWh,$email) {
-        $sessionindex=$_SESSION['index']+1;
-        $PowerGeneratorId=$sessionindex;
+        $sessionindex = ((int) ($_SESSION['index'] ?? 0)) + 1;
+        $PowerGeneratorId = $sessionindex;
         $query = "INSERT INTO PowerGenerator (Email,PowerGeneratorId,PowerGenerationType,AverageKWH,StorageKWh) VALUES('$email','$PowerGeneratorId','$powerType','$monthlykWh','$storagekWh')";
     
         return mysqli_query($this->con,$query);

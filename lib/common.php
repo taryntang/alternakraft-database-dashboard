@@ -50,10 +50,10 @@ if($showQueries){
 }
 
 define('DB_HOST', "localhost");
-define('DB_PORT', "3306");
-define('DB_USER', "gatechUser");
-define('DB_PASS', "gatech123");
-define('DB_SCHEMA', "cs6400_sp23_team052");
+define('DB_PORT', "8889");
+define('DB_USER', "root");
+define('DB_PASS', "root");
+define('DB_SCHEMA', "alternakraft_db");
 
 $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA, DB_PORT);
 

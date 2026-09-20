@@ -24,15 +24,13 @@ class powerView{
         if(isset($_POST['delete_button'])) {
             $id = $_POST['delete_id'];
             $_SESSION['deleted_power_id']=$id;
-            $query = "DELETE FROM powerGenerator WHERE PowerGeneratorId='$id' AND email='$email'";
+            $query = "DELETE FROM PowerGenerator WHERE PowerGeneratorId='$id' AND Email='$email'";
             mysqli_query($this->con, $query);
-            var_dump($_SESSION['deleted_power_id']);
-            var_dump($_SESSION['index']);
        
         }else {
             $_SESSION['deleted_power_id'] = 0;
         }
-        $query = "SELECT * FROM powerGenerator WHERE email='$email'";
+        $query = "SELECT * FROM PowerGenerator WHERE Email='$email'";
         $result = mysqli_query($this->con, $query);
         $html = '<table class="table">';
         $count = 0;

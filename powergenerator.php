@@ -10,23 +10,17 @@ require_once("assets/includes/classes/powerGenerator.php");
 $monthlykWhEmpty = false;
 $storagekWhEmpty = false;
 $errors = [];
-$power=new powerGenerator($db);
+$power = new powerGenerator($db);
+
+if (!isset($_SESSION['Email'])) {
+    header("Location: Enter_household.php");
+    exit();
+}
 
 $email = $_SESSION['Email'];
 $utility = $power->getUtility($email);
 $emailExists = $power->getEmail($email);
 $hasError = false;
-// if ($_SESSION['Email'] ) {
-//     header("Location:powergenerator.php");
-//     exit();
-// }else{
-//     header("Location:Enter_household.php");
-//     exit();
-// }
-if (!isset($_SESSION['Email'])) {
-    header("Location: Enter_household.php");
-    exit();
-}
 // if ($emailExists && $emailExists->num_rows > 0) {
 //     header("Location: powergenerator.php");
 //     exit();
@@ -42,15 +36,15 @@ if(isset($_POST["addButton"])){
     $errors = $power->getErrors();
     
     if (empty($errors)) {
-        header("Location: powerView.php");
+        header("Location: powerview.php");
         exit();
     } 
 }
 
     
 if (isset($_POST["skipButton"])) {
-    if ($utility->num_rows > 0 && $emailExists->num_rows >0 ) {
-        header("Location: powerView.php");
+    if ($utility && $utility->num_rows > 0 && $emailExists && $emailExists->num_rows > 0) {
+        header("Location: powerview.php");
         exit();
     } else {
         $hasError = true;
