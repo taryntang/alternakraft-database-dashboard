@@ -4,24 +4,22 @@ A PHP and MySQL web application for managing household data, appliance records, 
 
 ## Overview
 
-This project is a database-driven web app built for a class project and later refined for a more polished GitHub presentation. It allows users to:
-
-- enter household information
-- add and manage appliance records
-- view household summaries and dashboard-style reports
-- search manufacturer and model data
-- review report queries such as popular manufacturers and state-level water heater trends
-- explore off-grid household and radius-based analysis
+This project is a PHP and MySQL web app for managing household data, appliance records, and reporting dashboards. It supports household entry, manufacturer/model search, and analytics for energy-related trends and appliance summaries.
 
 ## Features
 
-- household record entry and validation
-- appliance add/delete flow
-- power generation tracking
-- manufacturer and model query search
-- report pages for analytics and drill-down views
-- heating/cooling and water heater statistics
-- off-grid household dashboard and averages-by-radius calculations
+- household entry and validation
+- appliance management
+- manufacturer and model search
+- dashboard-style reporting and drill-down views
+- heating/cooling and water heater analysis
+- off-grid and radius-based summaries
+
+## ERD and Database Design
+
+The project uses a relational MySQL schema built around entities such as households, appliances, manufacturers, utility types, postal codes, and power generation systems. Relationships are modeled with primary and foreign keys to reflect real-world connections and support reporting queries.
+
+This demonstrates practical understanding of ERD design, normalization, and SQL-based analytics.
 
 ## Tech Stack
 
