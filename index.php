@@ -1,7 +1,4 @@
 <?php
-
-
-header("Location: Main_Menu.php");
-
-
+header("Location: /app/Main_Menu.php");
+exit;
 ?>

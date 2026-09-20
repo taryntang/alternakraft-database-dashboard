@@ -57,7 +57,7 @@ This project is a database-driven web app built for a class project and later re
 2. Open phpMyAdmin or use the MySQL CLI.
 3. Create a database named `alternakraft_db`.
 4. Import the schema first:
-   - `demoData/team052_p3_schema.sql`
+   - `demoData/alternakraft_schema.sql`
 5. Then import the seed data in dependency order, such as:
    - `demoData/postalCode.sql`
    - `demoData/household.sql`
